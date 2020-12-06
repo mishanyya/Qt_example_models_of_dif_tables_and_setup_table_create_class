@@ -20,7 +20,5 @@ private:
 
 private slots:
 void createTable();// это созданный нами слот для вывода БД при запуске
-void inserttodb();// это созданный нами слот для ввода в БД
-void workingdbsave();// это созданный нами слот для сохранения данных в БД
 };
 #endif // MAINWINDOW_H

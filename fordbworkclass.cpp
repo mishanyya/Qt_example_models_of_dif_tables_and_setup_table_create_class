@@ -21,7 +21,7 @@ void fordbworkclass::opendb()
 {
     //здесь идет подробное описание, что делает метод
 
-    extern QSqlDatabase db;// подключение переменной из другого файла - драйвера для БД SQLite
+    extern QSqlDatabase db;// подключение переменной из другого файла, которая должна существовать в одном экземпляре и вызываться один раз - драйвера для БД SQLite
 
     //подключить БД по ее адресу на компьютере
     db.setDatabaseName("/home/mishanyya/fordbwork/examplebdfordbwork");
@@ -29,9 +29,7 @@ void fordbworkclass::opendb()
     db.open();
 
     //показывает параметры просто для проверки работы
-    qDebug() << "Class Method is Working (possible...)";
-    qDebug()<< "addDatabase=" <<db;
-    qDebug()<< "isOpen=" <<db.isOpen();
+     qDebug()<< "isOpen=" <<db.isOpen();
 
 }
 
