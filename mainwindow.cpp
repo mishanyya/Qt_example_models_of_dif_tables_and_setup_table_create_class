@@ -15,12 +15,13 @@
 #include "QLabel"
 
 
-QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");// подключение драйвера для БД SQLite
-
+// подключение драйвера для БД SQLite, должно осуществляться один раз!
+QSqlDatabase db=QSqlDatabase::addDatabase("QSQLITE");
 
 
 //создание объекта класса fordbworkclass
 fordbworkclass base;
+//при его создании автоматически сработает метод-функция конструктор, но только один раз!
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -40,7 +41,6 @@ MainWindow::~MainWindow()
 //функция, которая должна выводить базу данных в таблице при запуске программы
 void MainWindow::createTable(){
 //Общий код для QSqlTableModel, QSqlRelationalTableModel и QSqlQueryModel:
-base.opendb();//метод созданного класса fordbworkclass для открытия и подключения к БД
 
 //может пригодиться!
 //создает объект для запросов SQL

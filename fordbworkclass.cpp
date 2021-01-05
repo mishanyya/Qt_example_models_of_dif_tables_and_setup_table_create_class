@@ -10,27 +10,18 @@
 
 fordbworkclass::fordbworkclass()
 {
+//описание действий конструктора, который сработает сразу при создании объекта этого класса,
+    //но этот метод нельзя вызвать повторно!!!
+    //может быть пустым, а может выполнять какие-либо действия
 
-
-
-}
-
-//описание метода opendb() - создаваемого метода класса для открытия и подключения к БД
-//fordbworkclass:: - означает, что метод создается для класса fordbworkclass
-void fordbworkclass::opendb()
-{
-    //здесь идет подробное описание, что делает метод
-
-    extern QSqlDatabase db;// подключение переменной из другого файла, которая должна существовать в одном экземпляре и вызываться один раз - драйвера для БД SQLite
+// использовать переменную из другого файла, которая вызывает драйвера для БД SQLite
+   extern QSqlDatabase db;
 
     //подключить БД по ее адресу на компьютере
-    db.setDatabaseName("/home/mishanyya/fordbwork/examplebdfordbwork");
-    //открывает базу данных, указанную в db.setDatabaseName("/home/mishanyya/fordbwork/examplebdfordbwork");
-    db.open();
-
-    //показывает параметры просто для проверки работы
-     qDebug()<< "isOpen=" <<db.isOpen();
-
+    db.setDatabaseName("/home/mishanyya/databaseexample/examplebdfordbwork");
+    //открыть базу данных, указанную в db.setDatabaseName("/home/mishanyya/databaseexample/examplebdfordbwork");
+   db.open();
+   //показывает параметры просто для проверки работы
+    qDebug()<< "isOpen=" <<db.isOpen();
+    qDebug()<< "Конструктор сработал!!!";
 }
-
-
