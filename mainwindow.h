@@ -1,7 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
+#include "QMainWindow"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -19,6 +19,9 @@ private:
     Ui::MainWindow *ui;
 
 private slots:
-void createTable();// это созданный нами слот для вывода БД при запуске
+void createTable();   // это созданный нами слот для
+
+void examplefunction(int x, int y);   // это созданный нами слот для
+
 };
 #endif // MAINWINDOW_H
